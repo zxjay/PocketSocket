@@ -656,7 +656,7 @@
     }];
 }
 - (void)notifyDelegateDidReceiveMessage:(id)message {
-    [self executeDelegate:^{
+    [self executeDelegateAndWait:^{
         [_delegate webSocket:self didReceiveMessage:message];
     }];
 }

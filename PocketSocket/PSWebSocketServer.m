@@ -601,7 +601,7 @@ void PSWebSocketServerAcceptCallback(CFSocketRef s, CFSocketCallBackType type, C
     }];
 }
 - (void)notifyDelegateWebSocket:(PSWebSocket *)webSocket didReceiveMessage:(id)message {
-    [self executeDelegate:^{
+    [self executeDelegateAndWait:^{
         [_delegate server:self webSocket:webSocket didReceiveMessage:message];
     }];
 }
